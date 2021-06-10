@@ -1,8 +1,8 @@
 {% extends "base.html" %}  
 {% comment %} django template {% endcomment %}
 {% load static %}
-{% block page_content %}
 
+{% block page_content %}
 <h1>Projects</h1>
 <div class="row">
     {% comment %} loop projects passed in by context dictionary and generate bootstrap card for each one {% endcomment %}
@@ -15,7 +15,7 @@
                     <h5 class="card-title">{{ project.title }}</h5>
                     <p class="card-text">{{ project.description }}</p>
                     {% comment %} Accessing URLs in Django:  url '<url path name>' <view_function_arguments> {% endcomment %}
-                    <a href="{% url 'project_detail' project.pk %}" class="btn btn-primary"> Read More </a>
+                    <a href="{% url 'project_detail' project.pk %}" class="btn btn-warning"> Read More </a>
                 </div>
             </div>
         </div>
