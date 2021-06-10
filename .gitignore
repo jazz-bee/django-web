@@ -108,7 +108,7 @@ celerybeat.pid
 .env
 .venv
 env/
-#venv/
+venv/
 ENV/
 env.bak/
 venv.bak/
@@ -138,4 +138,4 @@ dmypy.json
 cython_debug/
 
 # Mac
-# .DS_Store
+.DS_Store
