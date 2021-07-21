@@ -22,3 +22,5 @@ Each app follows the Model-View-Template pattern
 
 In Django, the architecture is slightly different. Although based upon the MVC pattern, Django handles the controller part itself. 
 The view and template in the MVT pattern make up the view in the MVC pattern
+
+### Django documentation

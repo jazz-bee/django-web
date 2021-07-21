@@ -1,17 +1,27 @@
 from django.db import models
 
+
 class Category(models.Model):
     name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.name
+
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
     body = models.TextField()
-    # datetime object 
+    # datetime object
     # auto_now_add: whenever we edit an instance of this class, the date_modified is updated.
-    created_on =  models.DateTimeField(auto_now_add=True) 
+    created_on = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
     # Django makes linking  models easier by providing a ManytoManyField field type
     categories = models.ManyToManyField('Category', related_name='posts')
+
+    # names of blog post will appear in Django admin instead of Post Object (4)
+    def __str__(self):
+        return self.title
+
 
 class Comment(models.Model):
     author = models.CharField(max_length=60)
