@@ -5,20 +5,20 @@ from .forms import CommentForm
 
 def blog_index(request):
     # ordered with the most recent post first.The minus sign tells Django to start with the largest value rather than the smallest.
-    post = Post.objects.all().order_by('-created_on')
+    posts = Post.objects.all().order_by('-created_on')
 
     context = {
         'posts': posts
     }
 
-    return render(request, 'blog_detail.html', context)
+    return render(request, 'blog_index.html', context)
 
 # Index posts from specific category chosen by the user
 
 
 def blog_category(request, category):
-    post = Post.objects.filter(categories__name__contains=category
-                               ).order_by('-created_on')
+    posts = Post.objects.filter(categories__name__contains=category
+                                ).order_by('-created_on')
 
     context = {
         "category": category,
